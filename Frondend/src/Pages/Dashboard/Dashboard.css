@@ -1,5 +1,5 @@
 .dashboard--container {
-  margin: 20px;
+  margin: 30px 20px 0px 20px;
   margin-right: 30px;
 }
 .kkkk {
@@ -140,7 +140,7 @@
 }
 
 .pending-leaves-title {
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   font-weight: bold;
   color: #1f2937;
   display: flex;

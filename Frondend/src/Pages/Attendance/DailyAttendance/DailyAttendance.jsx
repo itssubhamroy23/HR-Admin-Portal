@@ -121,7 +121,7 @@ const DailyAttendance = () => {
             <div className="daily-attendance__summary-grid">
                 <div className="daily-attendance__summary-card present">
                     <p>Present</p>
-                    <p>{attendanceCounts.present}</p>
+                    <p className='ppp'>{attendanceCounts.present}</p>
                 </div>
                 <div className="daily-attendance__summary-card absent">
                     <p>Absent</p>

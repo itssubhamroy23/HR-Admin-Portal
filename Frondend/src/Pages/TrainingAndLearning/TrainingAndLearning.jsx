@@ -112,7 +112,18 @@ const TrainingAndLearning = () => {
             <div className="header-section">
                 <div className="header-title">
 
-                    <h1>Training & Learning</h1>
+
+
+                    <div className="page-header">
+                        <h2 className="page-title">Training & Learning</h2>
+                        <p className="page-description">
+                            Enhance skills and track learning progress with tailored training programs.
+                        </p>
+                    </div>
+
+
+
+
                 </div>
                 <button
                     onClick={() => setShowAddTraining(true)}
@@ -239,7 +250,10 @@ const TrainingAndLearning = () => {
 
                             <div className="training-detail-item">
                                 <p className="detail-title">Duration</p>
-                                <p className="detail-value">{training.duration}</p>
+                                <div className='detail-value-container'>
+                                    <p className="detail-value">{training.startDate}</p>
+                                    <p className="detail-value">{training.endDate}</p>
+                                </div>
                             </div>
 
                             <div className="training-detail-item">

@@ -93,7 +93,7 @@ const Dashboard = () => {
         {
             id: 'leave2',
             employee: {
-                name: 'Bhaskar R',
+                name: 'Salma Shirin',
                 department: 'Marketing',
                 avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330'
             },
@@ -107,7 +107,7 @@ const Dashboard = () => {
         {
             id: 'leave3',
             employee: {
-                name: 'Salma Sh',
+                name: 'Bhaskar R',
                 department: 'Design',
                 avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d'
             },

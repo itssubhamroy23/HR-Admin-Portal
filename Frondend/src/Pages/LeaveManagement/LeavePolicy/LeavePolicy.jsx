@@ -85,7 +85,7 @@ const LeavePolicy = () => {
         <div className="leave-policy-container">
             <div className="leave-policy-header">
                 <div>
-                    <h1 className="leave-policy-title">Leave Policies</h1>
+                    <h2 className="leave-policy-title">Leave Policies</h2>
                     <p className="leave-policy-subtitle">View and manage leave policy documents.</p>
                 </div>
                 <button className="upload-button" onClick={handleUploadClick}>

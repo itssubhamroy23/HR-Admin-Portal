@@ -3,7 +3,9 @@
   padding: 2rem;
   background-color: #f9f9f9;
 }
-
+.detail-value-container {
+  display: flex;
+}
 .training-container .header-section {
   display: flex;
   justify-content: space-between;
@@ -281,6 +283,7 @@
   font-size: 1rem;
   font-weight: 600;
   color: #111827;
+  margin-right: 10px;
 }
 
 .trainer-info {
