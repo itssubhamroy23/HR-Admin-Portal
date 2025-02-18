@@ -233,7 +233,7 @@ const Dashboard = () => {
                                         <img src={leave.employee.avatar} alt={leave.employee.name} className="employee-avatar" />
                                         <div className='kkkk'>
                                             <div className="leave-details">
-                                                <h3 className="leave-employee-name">{leave.employee.name}</h3>
+                                                <h4 className="leave-employee-name">{leave.employee.name}</h4>
                                                 <span className={`leave-type ${getLeaveTypeColor(leave.type)}`}>{leave.type}</span>
                                             </div>
                                             <div>

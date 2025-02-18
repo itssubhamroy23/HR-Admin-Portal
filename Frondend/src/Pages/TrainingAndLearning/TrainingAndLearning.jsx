@@ -120,10 +120,6 @@ const TrainingAndLearning = () => {
                             Enhance skills and track learning progress with tailored training programs.
                         </p>
                     </div>
-
-
-
-
                 </div>
                 <button
                     onClick={() => setShowAddTraining(true)}
@@ -170,75 +166,6 @@ const TrainingAndLearning = () => {
                         <p className="training-description">{training.description}</p>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        {/* <div className="training-details">
-                            <div>
-                                <p>Trainer</p>
-                                <div className="trainer-info">
-                                    <img
-                                        src={training.trainer.avatar}
-                                        alt={training.trainer.name}
-                                        className="trainer-avatar"
-                                    />
-                                    <span>{training.trainer.name}</span>
-                                </div>
-                            </div>
-                            <div>
-                                <p>Duration</p>
-                                <span>{training.duration}</span>
-                            </div>
-                            <div>
-                                <p>Participants</p>
-                                <button
-                                    onMouseEnter={() => setShowParticipants(training.id)}
-                                    onMouseLeave={() => setShowParticipants(null)}
-                                    className="participant-button"
-                                >
-                                    {training.participants.length} enrolled
-                                </button>
-                                {showParticipants === training.id && (
-                                    <div className="participant-tooltip">
-                                        {training.participants.map((participant) => (
-                                            <div key={participant.id}>{participant.name}</div>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                            <div>
-                                <p>Progress</p>
-                                <div className="progress-bar">
-                                    <div
-                                        className="progress-filled"
-                                        style={{ width: `${training.progress}%` }}
-                                    ></div>
-                                </div>
-                                <span>{training.progress}%</span>
-                            </div>
-                        </div> */}
-
-
-
-
                         <div className="training-details-row">
                             <div className="training-detail-item">
                                 <p className="detail-title">Trainer</p>
@@ -261,16 +188,6 @@ const TrainingAndLearning = () => {
                                 <p className="detail-value">{training.participants.length} enrolled</p>
                             </div>
 
-                            {/* <div className="training-detail-item">
-                                <p className="detail-title">Progress</p>
-                                <div className="progress-bar-container">
-                                    <div className="progress-bar" style={{ width: `${training.progress}%` }} />
-                                    <p className="progress-percentage">{training.progress}%</p>
-                                </div>
-                            </div> */}
-
-
-
 
 
                             <div className="training-detail-item">
@@ -281,33 +198,7 @@ const TrainingAndLearning = () => {
                                     </div>
                                     <p className="progress-percentage">{training.progress}%</p>
                                 </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        </div>
-
-
-
-
-
-
-
-
-                        <div className="training-resources">
+                            </div>  </div>  <div className="training-resources">
                             {training.resources.map((resource, index) => (
                                 <a key={index} href={resource.url} className="resource-link">
                                     {getResourceIcon(resource.type)}

@@ -9,11 +9,10 @@ import Certification from './Pages/Certification/Certification';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import EmployeeDatabase from './Pages/Employee/EmployeeDatabase/EmployeeDatabase';
 import EmployeeDetails from './Pages/Employee/EmployeeDetails/EmployeeDetails';
-import LeaveManagement from './Pages/LeaveManagement/LeaveManagement'
-import LeaveRequests from './Pages/LeaveManagement/LeaveRequest/LeaveRequest';
+import LeaveManagement from './Pages/LeaveManagement/LeaveManagement';
+import LeaveRequests from './Pages/LeaveManagement/PendingLeaveRequest/PendingLeaveRequest';
 import LeaveHistory from './Pages/LeaveManagement/LeaveHistory/LeaveHistory';
 import LeavePolicy from './Pages/LeaveManagement/LeavePolicy/LeavePolicy';
-
 
 function App() {
   return (
@@ -21,21 +20,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="attendance" element={<Attendance />} />
-          <Route path="leave-management" element={<LeaveManagement />} />
 
+          <Route path="/attendance" element={<Attendance />}>
+            <Route path="daily" element={<DailyAttendance />} />
+            <Route path="dashboard" element={<AttendanceDashboard />} />
+          </Route>
+          <Route path="leave-management" element={<LeaveManagement />} />
           <Route path="leave-management/leave-requests" element={<LeaveRequests />} />
           <Route path="leave-management/leave-history" element={<LeaveHistory />} />
           <Route path="leave-management/leave-policy" element={<LeavePolicy />} />
-
           <Route path="employee" element={<EmployeeDatabase />} />
           <Route path="employees/:id" element={<EmployeeDetails />} />
-          <Route path="attendance/daily" element={<DailyAttendance />} />
-          <Route path="attendance/dashboard" element={<AttendanceDashboard />} />
           <Route path="training" element={<TrainingAndLearning />} />
           <Route path="certification" element={<Certification />} />
         </Route>
-
       </Routes>
     </BrowserRouter>
   );

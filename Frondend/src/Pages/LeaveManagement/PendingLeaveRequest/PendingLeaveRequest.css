@@ -1,12 +1,13 @@
 .leave-container {
   padding: 20px;
   font-family: "Arial", sans-serif;
+  position: relative; /* Add this to make the button positioning relative to the container */
 }
 
-.leave-container .leave-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.leave-header {
+  display: flex; /* Change from grid to flex for better alignment */
+  justify-content: space-between; /* Space out the title and button */
+  align-items: center; /* Vertically center items */
   margin-bottom: 20px;
 }
 
@@ -22,13 +23,20 @@
   color: #777;
 }
 
-.leave-apply-button {
+.apply-leave-button {
   background-color: #4f46e5;
   color: white;
   padding: 8px 16px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
+  /* Remove absolute positioning */
+}
+
+.apply-leave-button:hover {
+  background-color: #3e3bb3;
 }
 
 .leave-filters {
@@ -46,14 +54,11 @@
 }
 
 .leave-search-input {
-  padding-right: 16px;
-  padding-top: 8px;
-  padding: 8px 8px 8px 8px;
-  padding-bottom: 8px;
+  padding: 8px;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   font-size: 14px;
-  width: 250%;
+  width: 50%;
 }
 
 .leave-filter-buttons {
@@ -74,7 +79,7 @@
   color: black;
   border-radius: 4px;
   margin-left: 10px;
-  padding: 2.5px 6px 2.5px 6px;
+  padding: 2.5px 6px;
   margin-right: 10px;
   border: none;
   background-color: white;
@@ -127,77 +132,96 @@
   height: 24px;
 }
 
-.leave-container .leave-employee-name {
+.leave-employee-name {
   font-size: 14px;
   margin-bottom: 5px;
 }
 
-.leave-container .leave-employee-id {
+.leave-employee-id {
   color: #777;
   font-size: 12px;
 }
 
-.leave-leave-type {
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-.admin-leave-department {
-  color: #777;
-  font-size: 14px;
-}
-
-.leave-duration-dates {
-  margin-bottom: 5px;
-  font-size: 14px;
-}
-
-.leave-duration-days {
-  font-size: 14px;
-}
 .leave-status-badge {
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 12px;
 }
 
-/* .leave-status-approved {
-  background-color: #4caf50;
-  color: white;
-  font-size: 14px;
-}
-
-.leave-status-rejected {
-  background-color: #f44336;
-  color: white;
-  font-size: 14px;
-}
-
-.leave-status-pending {
-  background-color: #ff9800;
-  color: white;
-  font-size: 14px;
-} */
-
 .leave-status-approved {
-  background-color: #d1fad1; /* Light green background */
-  color: #064e3b; /* Dark green text */
+  background-color: #d1fad1;
+  color: #064e3b;
   font-size: 12px;
   font-weight: bold;
 }
 
 .leave-status-rejected {
-  background-color: #fee2e2; /* Light red background */
-  color: #b91c1c; /* Dark red text */
+  background-color: #fee2e2;
+  color: #b91c1c;
   font-size: 12px;
   font-weight: bold;
 }
 
 .leave-status-pending {
-  background-color: #f3f4f6; /* Light gray background */
-  color: #1f2937; /* Dark gray text */
+  background-color: #e2e8f0;
+  color: #1f2937;
   font-size: 12px;
   font-weight: bold;
+}
+
+.leave-status-onHold {
+  background-color: #fef9c3;
+  color: #9e7d28;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.leave-approve-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.leave-approve-button:hover {
+  background-color: #218838;
+}
+
+.leave-reject-button {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.leave-reject-button:hover {
+  background-color: #c82333;
+}
+
+.leave-hold-button {
+  background-color: #ffc107;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.leave-hold-button:hover {
+  background-color: #e0a800;
 }
 
 .leave-details-button {
@@ -231,7 +255,7 @@
   background-color: white;
   padding: 20px;
   border-radius: 8px;
-  width: 400px;
+  width: 500px;
   max-width: 100%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -271,21 +295,4 @@
   justify-content: space-between;
   margin-top: 20px;
   margin-bottom: 5px;
-}
-
-.leave-approve-button,
-.leave-reject-button {
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.leave-approve-button {
-  background-color: #4caf50;
-  color: white;
-}
-
-.leave-reject-button {
-  background-color: #f44336;
-  color: white;
 }
