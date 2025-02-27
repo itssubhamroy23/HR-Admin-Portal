@@ -13,6 +13,8 @@ import LeaveManagement from './Pages/LeaveManagement/LeaveManagement';
 import LeaveRequests from './Pages/LeaveManagement/PendingLeaveRequest/PendingLeaveRequest';
 import LeaveHistory from './Pages/LeaveManagement/LeaveHistory/LeaveHistory';
 import LeavePolicy from './Pages/LeaveManagement/LeavePolicy/LeavePolicy';
+import RolePermissions from './Pages/RoleManagement/RoleManagement';
+import TrainingDetails from './Pages/TrainingAndLearning/TrainingDetails/TrainingDetails';
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="role-permissions" element={<RolePermissions />} />
 
           <Route path="/attendance" element={<Attendance />}>
             <Route path="daily" element={<DailyAttendance />} />
@@ -32,6 +35,10 @@ function App() {
           <Route path="employee" element={<EmployeeDatabase />} />
           <Route path="employees/:id" element={<EmployeeDetails />} />
           <Route path="training" element={<TrainingAndLearning />} />
+
+
+          <Route path="/training/:id" element={<TrainingDetails />} />
+
           <Route path="certification" element={<Certification />} />
         </Route>
       </Routes>

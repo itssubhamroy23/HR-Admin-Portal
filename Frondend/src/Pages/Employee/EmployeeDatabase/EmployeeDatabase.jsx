@@ -21,6 +21,7 @@ const EmployeeDatabase = () => {
         location: '',
         status: ''
     });
+    const [showAddEmployeeModal, setShowAddEmployeeModal] = useState(false);
 
     const mockEmployees = [
         {
@@ -86,6 +87,14 @@ const EmployeeDatabase = () => {
         }
     };
 
+    const handleAddEmployeeClick = () => {
+        setShowAddEmployeeModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowAddEmployeeModal(false);
+    };
+
     return (
         <div className="employee-db-container">
             <div className="employee-db-header">
@@ -100,11 +109,60 @@ const EmployeeDatabase = () => {
                     <button className="employee-db-btn">
                         <Upload className="employee-db-btn-icon" /> Import
                     </button>
-                    <button className="employee-db-btn-add">
+                    <button className="employee-db-btn-add" onClick={handleAddEmployeeClick}>
                         <Plus className="employee-db-btn-icon" /> Add Employee
                     </button>
                 </div>
             </div>
+
+            {/* Add Employee Modal */}
+            {showAddEmployeeModal && (
+                <div className="employee-db-modal-overlay">
+                    <div className="employee-db-modal">
+                        <h2>Add Employee</h2>
+                        <form>
+                            <h3>Employment Details</h3>
+                            <label>Employee ID</label>
+                            <input type="text" placeholder="Employee ID" />
+                            <label>Job Title</label>
+                            <input type="text" placeholder="Job Title" />
+                            <label>Line Manager</label>
+                            <input type="text" placeholder="Line Manager" />
+                            <label>Location</label>
+                            <input type="text" placeholder="Location" />
+                            <label>Office Email</label>
+                            <input type="email" placeholder="Office Email" />
+                            <label>Date of Joining</label>
+                            <input type="date" />
+                            <label>Employment Type</label>
+                            <input type="text" placeholder="Employment Type" />
+                            <label>UAN</label>
+                            <input type="text" placeholder="UAN" />
+                            <label>PF Account Number</label>
+                            <input type="text" placeholder="PF Account Number" />
+
+                            <h3>Bank Details</h3>
+                            <label>Account Holder's Name</label>
+                            <input type="text" placeholder="Account Holder's Name" />
+                            <label>Bank Name</label>
+                            <input type="text" placeholder="Bank Name" />
+                            <label>Account Number</label>
+                            <input type="text" placeholder="Account Number" />
+                            <label>IFSC Code</label>
+                            <input type="text" placeholder="IFSC Code" />
+                            <label>Account Status</label>
+                            <input type="text" placeholder="Account Status" />
+                            <label>ESIC Number</label>
+                            <input type="text" placeholder="ESIC Number" />
+
+                            <div className="employee-db-modal-buttons">
+                                <button type="submit">Save</button>
+                                <button type="button" onClick={handleCloseModal}>Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
 
             <div className="employee-db-filters">
                 <div className="employee-db-search-container">

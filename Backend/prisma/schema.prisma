@@ -17,12 +17,15 @@ model Trainer {
   trainings Training[]
 }
 
+
+
 model Training {
   id                     String               @id @default(auto()) @map("_id") @db.ObjectId
   title                  String
   description            String
-  trainerId              String               @db.ObjectId
-  duration               Int
+  trainerId              String?              @db.ObjectId
+  startDate              DateTime             @map("start_date")
+  endDate                DateTime             @map("end_date")
   courseProgress         Float
   certificationAvailable Boolean
   totalParticipants      Int
@@ -30,24 +33,26 @@ model Training {
   activeTraining         Boolean
   createdAt              DateTime             @default(now()) @map("created_at")
   updatedAt              DateTime             @default(now()) @updatedAt @map("updated_at")
-  trainer                Trainer              @relation(fields: [trainerId], references: [id])
+  trainer                Trainer?             @relation(fields: [trainerId], references: [id])
   participants           Participant[]
   sessions               Session[]
-  courseMaterials        CourseMaterial[]
-  videoLectures          VideoLecture[]
-  additionalResources    AdditionalResource[]
+  materialFiles          CourseMaterial[]
+  lectureFiles           VideoLecture[]
+  resourceFiles          AdditionalResource[]
 }
 
+
 model Participant {
-  id             String    @id @default(auto()) @map("_id") @db.ObjectId
-  employeeId     String    @db.ObjectId
-  trainingId     String    @db.ObjectId
-  enrollmentDate DateTime  @default(now()) @map("enrollment_date")
+  id             String     @id @default(auto()) @map("_id") @db.ObjectId
+  employeeId     String?    @db.ObjectId // Made optional
+  trainingId     String     @db.ObjectId
+  enrollmentDate DateTime   @default(now()) @map("enrollment_date")
   progress       Float
   status         String   
-  employee       Employee  @relation(fields: [employeeId], references: [id])
-  training       Training  @relation(fields: [trainingId], references: [id])
+  employee       Employee?  @relation(fields: [employeeId], references: [id]) // Made optional
+  training       Training   @relation(fields: [trainingId], references: [id])
 }
+
 
 model Session {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId

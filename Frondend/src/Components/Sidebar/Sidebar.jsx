@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './sidebar.css';
-import { BarChart3, Calendar, Users, Clock, GraduationCap, Award, ChevronDown } from 'lucide-react';
+import { BarChart3, Calendar, Users, Clock, GraduationCap, Award, Shield, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -33,6 +33,7 @@ const Sidebar = () => {
         },
         { name: 'Training and Learning', icon: GraduationCap, path: '/training' },
         { name: 'Certification and Badges', icon: Award, path: '/certification' },
+        { name: 'Role Permissions', icon: Shield, path: '/role-permissions' }
     ];
 
     return (
