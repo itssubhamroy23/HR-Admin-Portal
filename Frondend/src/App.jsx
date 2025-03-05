@@ -15,6 +15,7 @@ import LeaveHistory from './Pages/LeaveManagement/LeaveHistory/LeaveHistory';
 import LeavePolicy from './Pages/LeaveManagement/LeavePolicy/LeavePolicy';
 import RolePermissions from './Pages/RoleManagement/RoleManagement';
 import TrainingDetails from './Pages/TrainingAndLearning/TrainingDetails/TrainingDetails';
+import NotificationPage from './Pages/Notification/NotificationPage';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/training/:id" element={<TrainingDetails />} />
 
           <Route path="certification" element={<Certification />} />
+          <Route path="notification" element={<NotificationPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
